@@ -1,0 +1,187 @@
+<html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title></title>
+     
+ <style>
+
+            html {
+                 background: #100a1c;
+                 background-image:
+                 radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0,0,0,0) 100%),
+                 radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+                 background-attachment: fixed;
+                 color: #6cacc5;
+            }    
+              
+              
+              
+            body {
+	               color: #6cacc5;
+                 font: 300 18px/1.6 "Source Sans Pro",sans-serif;
+                 margin: 0;
+                 padding: 5em 0 2em;
+                 text-align: center;
+	     
+	         }
+	         h1 {
+	           font: 300 20px/1.6 "Source Sans Pro",sans-serif;
+	         }
+	         #rel{
+	           border:none;
+	           color:#6cacc5;
+	           font-weight:bold;
+	           font-size:50px;
+	           height:80px;
+	           width:260px;
+	           background: none;
+	           text-align:center;
+	           border-radius:20px;
+	           font: 300 65px/1.6 "Source Sans Pro",sans-serif;
+	       
+	         }
+           .visor{  
+	             width: 260px;
+	             height: 70px;
+	             font-size: 100%;
+	              font: 300 50px/1.6 "Source Sans Pro",sans-serif;
+	             color: #6cacc5;
+	             text-align:center;
+	             border: none;
+               border-radius:5%;
+               background: rgba(42,50,113, .28);
+               border: 20px 20px 20px 20px;
+               
+            
+           }   
+          .botao{
+	        
+              border: 0;
+              background: rgba(42,50,113, .28);
+              color: #6cacc5;
+              cursor: pointer;
+              font: inherit;
+              margin: 0.25em;
+              width: 3em;
+              height: 3em;
+              transition: all 0.5s;
+  
+              &:hover {
+              background: #201e40;
+          
+	        }
+          .calculator {
+              font-size: 28px;
+              margin: 0 auto;
+              width: 10em;
+             
+            &::before,
+              &::after {
+              content: " ";
+             display: table;
+            }
+  
+              &::after {
+               clear: both;
+              }
+          }  
+    
+</style>
+  </head>
+    <body>
+    <h1>Calculadora JavaScript</h1>
+    <div class="calculator" id="calculator">
+    <br>
+    <input type="text" id="rel" disabled/>
+    
+    <br><br>
+     <input type="text" id="visor" size="11" class="visor" disabled />
+    <br><br>
+	   
+	  <input type="submit" class="botao" value="1" id="num" onclick="preencher(1);"/>
+	   
+	  <input type="submit" class="botao" value="2" id="num" onclick="preencher(2);" />
+
+	  <input type="submit" class="botao" value="3" onclick="preencher(3);" />
+
+	  <input type="submit" class="botao" value="/" id="num" onclick="preencher('/');" />
+    <br>
+	   <input type="submit" class="botao" value="4" id="num" onclick="preencher(4);" />
+	  
+	   <input type="submit" class="botao" value="5" id="num" onclick="preencher(5);" />
+
+	   <input type="submit" class="botao" value="6" id="num" onclick="preencher(6);" />
+	 
+	   <input type="submit" class="botao" value="*" id="num" onclick="preencher('*');" />
+    
+	 <br>
+    <input type="submit" class="botao" value="7" id="num" onclick="preencher(7);" />
+	 
+    <input type="submit" class="botao" value="8" id="num" onclick="preencher(8);" />
+    
+    <input type="submit" class="botao" value="9" id="num" onclick="preencher(9);" />
+
+   <input type="submit" class="botao" value="+" id="num" onclick="preencher('+');" />
+      
+  <br>
+	 <input type="submit" class="botao" value="0" id="num" onclick="preencher(0);" />
+	
+   <input type="submit" class="botao" value="C" id="num" onClick="limpar()"/>
+	     
+   <input type="submit" class="botao" value="=" id="num" onclick="calcular();"/>
+	     
+	 <input type="submit" class="botao" value="-" id="num" onclick="preencher('-');" />
+	 
+	 </div>
+	 <h1> © vitordev01 github pages 2022</h1>
+<script>
+ function relogio(){ 
+          var data=new Date(); 
+          var hor=data.getHours(); 
+          var min=data.getMinutes(); 
+          var seg=data.getSeconds(); 
+ 
+         if(hor<10){
+         hor="0"+hor; 
+         } 
+         if(min<10){ 
+         min="0"+min; 
+         } 
+         if(seg<10){ 
+         seg="0"+seg;
+         }
+
+         var horas=hor+":"+min+":"+seg;
+  document.getElementById("rel").value=horas
+    }
+     var tempo=setInterval(relogio,1000);
+        
+
+   function limpar(){
+	     
+	        document.getElementById('visor').value= '';
+	 
+	 
+	       }
+	 
+   function preencher(valor){
+	   
+	 	      document.getElementById('visor').value += valor;
+	 
+         }
+	 
+   function calcular (){
+	       var resultado = 0;
+	       resultado = document.getElementById('visor').value;
+	 
+	       document.getElementById('visor').value = "";
+	     
+	       document.getElementById('visor').value = eval(resultado);
+
+	      }
+ </script>
+  
+  </body>
+</html>
