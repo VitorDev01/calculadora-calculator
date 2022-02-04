@@ -1,5 +1,7 @@
 # calculadora-calculator
-Versão final do projeto Calculadora JAVASCRIPT com tags style e script integradas ao Html
+![App Ideas Image](./app-ideas.png)
+
+Versão final do projeto Calculadora JAVASCRIPT + Relógio com tags style e script integradas ao Html
 
 Veja A primeira versão do projeto :[https://vitordev01.github.io/Calculadora-Relogio/]
 
